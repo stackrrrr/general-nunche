@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>General Nunch&eacute;: Anger. Struggle. Power!</title>
+  
+  <meta name="description" content="Digital leader and strategist for the arts, museum and cultural sector.">
+	
+	<link rel="canonical" href="https://st-ck.net/" />
+
+	<link rel="stylesheet" href="style.css" type="text/css" media="screen">
+
+	<!-- Icons -->
+		<link rel="apple-touch-icon" sizes="180x180" href="https://st-ck.net/apple-touch-icon.png">
+		<link rel="icon" type="image/png" sizes="32x32" href="https://st-ck.net/favicon-32x32.png">
+		<link rel="icon" type="image/png" sizes="16x16" href="https://st-ck.net/favicon-16x16.png">
+		<link rel="manifest" href="https://st-ck.net/site.webmanifest">
+			<!-- <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"> -->
+		<link rel="mask-icon" href="https://st-ck.net/safari-pinned-tab.svg" color="#000000"> 									
+		<meta name="msapplication-TileColor" content="#da532c">
+		<meta name="theme-color" content="#ffffff">
+
+	<!-- Opengraph Meta Tags -->
+		<meta property="og:url" content="https://st-ck.net">
+		<meta property="og:title" content="John Stack | Museums + Digital + Art">
+		<meta property="og:description" content="Digital leader and strategist for the arts, museum and cultural sector. ">
+		<meta property="og:image" content="https://st-ck.net/og_card/John_Stack.jpg">
+
+	<!-- Tw*tter Meta Tags -->
+		<meta name="twitter:card" content="summary_large_image">
+		<meta property="twitter:domain" content="st-ck.net">
+		<meta property="twitter:url" content="https://st-ck.net">
+		<meta name="twitter:title" content="John Stack | Museums + Digital + Art">
+		<meta name="twitter:description" content="Digital leader and strategist for the arts, museum and cultural sector.">
+		<meta name="twitter:image" content="https://st-ck.net/og_card/John_Stack.jpg">
+		
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    html,
+    body {
+      width: 100%;
+      height: 100%;
+      margin: 0;
+      overflow: hidden;
+      background: #000;
+      font-family: Helvetica, Arial, sans-serif;
+    }
+
+    .slideshow {
+      position: relative;
+      width: 100vw;
+      height: 100vh;
+      overflow: hidden;
+      background: #000;
+    }
+
+    .slide {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+
+      /* Both images remain visible during the transition */
+      opacity: 0;
+      transition: opacity 2s ease-in-out;
+
+      /* Prevent images from being clickable */
+      pointer-events: none;
+    }
+
+    .slide.active {
+      opacity: 1;
+    }
+
+    .overlay {
+      position: absolute;
+      z-index: 10;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      padding: 40px 6vw 45px;
+      color: white;
+
+      /* Keeps the text readable without overpowering the image */
+      background: linear-gradient(
+        to top,
+        rgba(0, 0, 0, 0.9),
+        rgba(0, 0, 0, 0.6),
+        transparent
+      );
+    }
+
+    .overlay-panel {
+      max-width: 900px;
+    }
+
+    .overlay h1 {
+      margin: 0 0 10px;
+      font-size: clamp(2rem, 5vw, 4.5rem);
+      line-height: 1;
+    }
+
+    .overlay p {
+      margin: 0;
+      max-width: 90vw;
+      font-size: clamp(1rem, 1.6vw, 1.35rem);
+      line-height: 1.5;
+      color: rgba(255, 255, 255, 0.9);
+      font-weight:bold;
+    }
+    
+    a {color: white}
+    
+    a:visited {color: white}
+    
+  </style>
+</head>
+
+<body>
+  <main class="slideshow">
+
+    <img
+      class="slide active"
+      src="1.jpeg"
+      alt="Slideshow image 1"
+    >
+
+    <img
+      class="slide"
+      src="2.jpeg"
+      alt="Slideshow image 2"
+    >
+
+    <img
+      class="slide"
+      src="3.jpeg"
+      alt="Slideshow image 3"
+    >
+
+    <img
+      class="slide"
+      src="4.jpeg"
+      alt="Slideshow image 4"
+    >
+
+    <img
+      class="slide"
+      src="5.jpeg"
+      alt="Slideshow image 5"
+    >
+
+    <div class="overlay">
+      <div class="overlay-panel">
+        <!-- <h1>General Nunch&eacute;</h1> -->
+        <p>General Nunch&eacute;: Anger. Struggle. Power!</p>
+        <p><a href="General_Nunché_2026.jpg">Download poster</a> (JPEG 10MB)</p>
+      </div>
+    </div>
+
+  </main>
+
+  <script>
+    const slides = document.querySelectorAll(".slide");
+
+    let currentSlide = 0;
+
+    // Time each image remains on screen
+    const displayTime = 5000;
+
+    function nextSlide() {
+      // Turn on the next image first.
+      // The current image is still visible underneath it,
+      // creating a smooth crossfade rather than a black gap.
+      const nextSlide = (currentSlide + 1) % slides.length;
+
+      slides[nextSlide].classList.add("active");
+
+      // Remove the old image after the transition has started
+      setTimeout(() => {
+        slides[currentSlide].classList.remove("active");
+        currentSlide = nextSlide;
+      }, 2000);
+    }
+
+    setInterval(nextSlide, displayTime);
+  </script>
+</body>
+</html>
